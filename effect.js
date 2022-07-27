@@ -169,29 +169,29 @@ $('document').ready(function(){
 		$('.cake').fadeOut('fast').promise().done(function(){
 			$('.message').fadeIn('slow');
 		});
+		
 		var i;
+
 		function msgLoop (i) {
-			$("p:nth-child("+i+")").fadeOut('slow').delay(600).promise().done(function(){
+			$("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
 			i=i+1;
-			$("p:nth-child("+i+")").fadeIn('slow').delay(800);
+			$("p:nth-child("+i+")").fadeIn('slow').delay(1000);
 			if(i==50){
 				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
 					$('.cake').fadeIn('fast');
 				});
+				
 			}
 			else{
 				msgLoop(i);
 			}			
+
 		});
 			// body...
 		}
+		
 		msgLoop(0);
-		$(this).fadeOut('slow').delay(6000).promise().done(function(){
-			$('#gifts').fadeIn('slow');	
-	});
-
-	$('#gifts').click(function(){
-		$(window).open("https://ajanadj.github.io/ebi26gifts");
+		
 	});
 });
 
